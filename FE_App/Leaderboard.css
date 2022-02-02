@@ -1,0 +1,26 @@
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+div {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+th {
+    text-align: right;
+    background-color: cadetblue;
+    font-size: 35px;
+}
+tr {
+    margin-right: auto;
+    margin-left: auto;
+    background-color: cornflowerblue;
+    font-size: 20px;
+}
+table {
+    width: 100%;
+}
