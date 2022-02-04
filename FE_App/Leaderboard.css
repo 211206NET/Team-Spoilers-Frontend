@@ -29,3 +29,9 @@ td {
     margin-left: auto;
     margin-right: auto;
 }
+body
+{
+    background-image: url("https://th.bing.com/th/id/R.34a521895dc7bc8e541519c254095137?rik=1GaCQdqCmQNJxg&riu=http%3a%2f%2ffo4mw16y1z42edr6j2m4n6vt.wpengine.netdna-cdn.com%2fwp-content%2fuploads%2fOscar-Statuette.jpg&ehk=MZBGx%2bXihdPBp3BvSsryWbJheQD2XlGxAhPsb2ZIzs8%3d&risl=&pid=ImgRaw&r=0");
+    filter:alpha(opacity=40);
+}
+
