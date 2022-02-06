@@ -11,6 +11,11 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { PlayerComponent } from './player/player.component';
 import { SeriesComponent } from './series/series.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
+import { NavbarComponent } from './navbar/navbar.component';
+import { environment } from 'src/environments/environment';
+import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +27,18 @@ import { UserComponent } from './user/user.component';
     LeaderboardComponent,
     PlayerComponent,
     SeriesComponent,
-    UserComponent
+    UserComponent,
+    NavbarComponent,
+    AuthBtnComponent
   ],
   imports: [
+    AuthModule.forRoot({
+      domain: environment.authDomain,
+      clientId: environment.authClientId
+    }),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
