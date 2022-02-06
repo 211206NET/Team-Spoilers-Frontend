@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn.component';
 
 describe('AuthBtnComponent', () => {
@@ -8,7 +9,13 @@ describe('AuthBtnComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AuthBtnComponent ]
+      declarations: [ AuthBtnComponent ],
+      imports: [
+        AuthModule.forRoot({
+          domain: environment.authDomain,
+          clientId: environment.authClientId
+        })
+      ]
     })
     .compileComponents();
   });

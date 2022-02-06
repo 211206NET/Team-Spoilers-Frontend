@@ -1,1 +1,2 @@
-<p>auth-btn works!</p>
+<button class="btn btn-default" *ngIf="!loggedIn" (click)="logIn()">Log In</button>>
+<button class="btn btn-default" *ngIf="loggedIn" (click)="logOut()">Log Out</button>
