@@ -9,4 +9,10 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class NavbarComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService) { }
+  user: any = {}
+  ngOnInit(): void {
+      this.auth.user$.subscribe((userInfo) => {
+        this.user = userInfo;
+      })
+  }
 }
