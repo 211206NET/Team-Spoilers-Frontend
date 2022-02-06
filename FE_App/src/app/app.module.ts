@@ -13,6 +13,11 @@ import { PlayerComponent } from './player/player.component';
 import { SeriesComponent } from './series/series.component';
 import { UserComponent } from './user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; //added SPA Routing Code
+import { FormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
+import { NavbarComponent } from './navbar/navbar.component';
+import { environment } from 'src/environments/environment';
+import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 
 @NgModule({
   declarations: [
@@ -26,18 +31,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     SeriesComponent,
     UserComponent,
     PageNotFoundComponent //added SPA Routing Code
+    NavbarComponent,
+    AuthBtnComponent
   ],
   imports: [
+    AuthModule.forRoot({
+      domain: environment.authDomain,
+      clientId: environment.authClientId
+    }),
     BrowserModule,
     AppRoutingModule,
-    
-    // //added SPA Routing Code
-    // RouterModule.forRoot([
-    //   {path: 'game', component: GameComponent},
-    //   {path: 'leaderboard', component: LeaderboardComponent},
-    //   {path: '', redirectTo: '/game', pathMatch: 'full'},
-    //   {path: '**', component: PageNotFoundComponent}
-    // ]),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
