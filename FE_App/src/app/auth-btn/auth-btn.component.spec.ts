@@ -12,8 +12,8 @@ describe('AuthBtnComponent', () => {
       declarations: [ AuthBtnComponent ],
       imports: [
         AuthModule.forRoot({
-          domain: environment.authDomain,
-          clientId: environment.authClientId
+          domain: 'testing domain',
+          clientId: 'testing clientId'
         })
       ]
     })
