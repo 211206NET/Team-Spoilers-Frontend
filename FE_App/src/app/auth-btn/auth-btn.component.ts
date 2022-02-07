@@ -6,9 +6,6 @@ import { AuthService } from '@auth0/auth0-angular';
   templateUrl: './auth-btn.component.html',
   styleUrls: ['./auth-btn.component.css']
 })
-@Injectable({
-  providedIn: 'root'
-})
 export class AuthBtnComponent implements OnInit {
 
   constructor(public auth: AuthService) { }
