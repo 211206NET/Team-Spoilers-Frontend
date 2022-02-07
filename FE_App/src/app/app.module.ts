@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router'; //added SPA Routing Code
 import { AppComponent } from './app.component';
 import { AnswerComponent } from './answer/answer.component';
 import { BingoCardComponent } from './bingo-card/bingo-card.component';
@@ -30,7 +29,7 @@ import { AuthBtnComponent } from './auth-btn/auth-btn.component';
     PlayerComponent,
     SeriesComponent,
     UserComponent,
-    PageNotFoundComponent //added SPA Routing Code
+    PageNotFoundComponent, //added SPA Routing Code
     NavbarComponent,
     AuthBtnComponent
   ],
