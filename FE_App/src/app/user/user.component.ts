@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '@auth0/auth0-angular';
 import { User } from '../models/user';
 
 @Component({
@@ -8,9 +10,11 @@ import { User } from '../models/user';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router: Router, private auth: AuthService) { }
+  user: any = {}
   ngOnInit(): void {
+      this.auth.user$.subscribe((userInfo) => {
+        this.user = userInfo;
+      })
   }
-
 }

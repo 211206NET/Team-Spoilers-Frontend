@@ -1,12 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand bgbrand">Bingo Game</a>
+    <a class="navbar-brand bgbrand">Welcome to the Bingo Game</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/create">Create</a>
+                <a class="nav-link" routerLink="/game">New Game</a>
+            </li>
+            <li class="nav-item">
+                <a class ="nav-link" routerLink="/leaderboard">Leaderboard</a>
             </li>
             <li class="nav-item">
                 <app-auth-btn></app-auth-btn>
@@ -17,3 +20,4 @@
         </ul>
     </div>
 </nav>
+<router-outlet></router-outlet>
