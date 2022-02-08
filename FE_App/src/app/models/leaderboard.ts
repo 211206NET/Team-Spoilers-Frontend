@@ -1,4 +1,4 @@
-type leaderboard = {
+export type Leaderboard = {
     leaderboardID: number;
     playerID: number;
 }

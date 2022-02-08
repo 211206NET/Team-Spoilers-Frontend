@@ -1,4 +1,4 @@
-type series = {
+export type Series = {
     seriesID: number;
     name: string;
     genre: string;
