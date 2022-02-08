@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: 'bingo-card',
         component: BingoCardComponent, // another child route component that the router renders
+      },
+      {
+        path: 'add-an-answer',
+        component: AnswerComponent,
       }
     ],
   },
