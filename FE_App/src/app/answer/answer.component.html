@@ -1,1 +1,13 @@
-<p>answer works!</p>
+<div class=""container>
+    <h3>Add an answer!</h3>
+</div>
+
+<div class="container">
+    <form (ngSubmit)="answerForm(newAnswerForm)" #newAnswerForm="ngForm">
+        <label for="ans-block">Answer</label>
+        <input type="text" id= "block" block="ans-block">
+    </form>
+    <div>
+        <button> Submit </button>
+    </div>
+</div>

@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AuthModule } from '@auth0/auth0-angular';
-import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn.component';
 
 describe('AuthBtnComponent', () => {
