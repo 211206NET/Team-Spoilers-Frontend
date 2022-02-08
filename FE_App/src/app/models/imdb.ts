@@ -1,4 +1,4 @@
-export type imdb = {
+export type Imdb = {
     imdbID: number;
     apiID: number;
     name: string;
