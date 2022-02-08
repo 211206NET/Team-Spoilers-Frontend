@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BGApiService } from '../services/bgapi.service';
 import { Answer } from '../models/answer';
-import { BingoCard } from '../models/bingocard';
+import { BingoCard } from '../models/bingoCard';
 
 @Component({
   selector: 'app-bingo-card',
