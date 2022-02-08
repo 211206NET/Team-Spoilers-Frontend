@@ -1,4 +1,3 @@
-import { answer } from './answer'
 export type bingoCard = {
     id: number;
     seriesID: number;
