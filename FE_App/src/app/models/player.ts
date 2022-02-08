@@ -6,3 +6,4 @@ export type Player = {
     userID: number;
     score: number;
 }
+

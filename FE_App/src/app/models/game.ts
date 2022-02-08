@@ -6,5 +6,5 @@ export type Game = {
     question: string;
     seriesID: number;
     playerID: number;
-    hasWinner: boolean;
+    hasWinnder: boolean;
 }
