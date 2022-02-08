@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BGApiService } from '../services/bgapi.service';
 import { Answer } from '../models/answer';
 import { BingoCard } from '../models/bingo-card';
+import { AnswerComponent } from '../answer/answer.component';
 
 @Component({
   selector: 'app-bingo-card',
@@ -18,7 +19,9 @@ export class BingoCardComponent implements OnInit {
     this.apiService.getAnswersByBingoId().then((ansArray) =>
     {
       this.allAnswers = ansArray;
-      console.log(this.allAnswers);
+      this.allAnswers.forEach((a) => {
+        console.log(a.block)
+      });
     })
   }
 
