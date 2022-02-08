@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { GameComponent } from './game/game.component';
@@ -7,6 +7,7 @@ import { UserComponent } from './user/user.component';
 import { SeriesComponent } from './series/series.component';
 import { BingoCardComponent } from './bingo-card/bingo-card.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AnswerComponent } from './answer/answer.component';
 
 const routes: Routes = [
   { path: 'game', component: GameComponent,
@@ -18,7 +19,7 @@ const routes: Routes = [
       {
         path: 'bingo-card',
         component: BingoCardComponent, // another child route component that the router renders
-      },
+      }
     ],
   },
   { path: 'leaderboard', component: LeaderboardComponent },

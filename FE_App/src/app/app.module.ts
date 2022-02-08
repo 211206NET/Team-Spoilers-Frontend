@@ -17,6 +17,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { NavbarComponent } from './navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AuthBtnComponent } from './auth-btn/auth-btn.component';
     }),
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
