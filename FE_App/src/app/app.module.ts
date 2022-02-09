@@ -41,7 +41,7 @@ import { provideRoutes } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

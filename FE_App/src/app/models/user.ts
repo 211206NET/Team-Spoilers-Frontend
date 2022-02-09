@@ -1,4 +1,4 @@
-import { BingoCard } from './bingo-card'
+import { BingoCard } from "./bingo-card"
 
 export type User = {
     id: number;
