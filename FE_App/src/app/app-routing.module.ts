@@ -10,25 +10,26 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AnswerComponent } from './answer/answer.component';
 
 const routes: Routes = [
-  { path: 'game', component: GameComponent,
-    children: [
-      {
-        path: 'series', // child route path
-        component: SeriesComponent, // child route component that the router renders
+  {    path: 'game', 
+       component: GameComponent,
+       children:[
+         {
+           path: 'series', // child route path
+           component: SeriesComponent, // child route component that the router renders
+         },
+         {
+           path: 'bingo-card',
+           component: BingoCardComponent, // another child route component that the router renders
+         },
+         {
+           path: 'add-an-answer',
+           component: AnswerComponent,
+         }
+       ]
       },
-      {
-        path: 'bingo-card',
-        component: BingoCardComponent, // another child route component that the router renders
+      { path: 'leaderboard', 
+        component: LeaderboardComponent, 
       },
-      {
-        path: 'add-an-answer',
-        component: AnswerComponent,
-      }
-    ],
-  },
-  { path: 'leaderboard', component: LeaderboardComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'series', component: SeriesComponent },
   { path: '',   redirectTo: '/user', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
