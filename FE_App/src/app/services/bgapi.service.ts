@@ -32,7 +32,7 @@ export class BGApiService {
     }
     getBingoCardbyId(id: number): Promise<BingoCard[]>
     { 
-      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard" + id))
+      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard/" + id))
     }
     getBingoCard(): Promise<BingoCard[]>
     {
