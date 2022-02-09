@@ -17,6 +17,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { provideRoutes } from '@angular/router';
 
 @NgModule({
   declarations: [

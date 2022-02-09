@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   user: any = {}
   ngOnInit(): void {
       this.auth.user$.subscribe((userInfo: any) => {
+        console.log(userInfo);
         this.user = userInfo;
       })
   }
