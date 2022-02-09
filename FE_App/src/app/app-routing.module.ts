@@ -10,10 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AnswerComponent } from './answer/answer.component';
 
 const routes: Routes = [
-  { path: 'user', component: UserComponent, 
-    children:[
-      {
-       path: 'game', 
+  {    path: 'game', 
        component: GameComponent,
        children:[
          {
@@ -32,9 +29,7 @@ const routes: Routes = [
       },
       { path: 'leaderboard', 
         component: LeaderboardComponent, 
-      }
-    ],
-  },
+      },
   { path: '',   redirectTo: '/user', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
