@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { USApiService } from '../services/usapi.service';
 import { User } from '../models/user';
 
 @Component({
