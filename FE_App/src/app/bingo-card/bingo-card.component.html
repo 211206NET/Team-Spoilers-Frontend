@@ -1,7 +1,6 @@
-<p>bingo-card works!</p>
 
 <div class="container">
-    <h1>THE BINGO GAME!! </h1>
+    <h1 class="">THE BINGO GAME!! </h1>
     <a class="nav-link" routerLink="/game/add-an-answer">Add an answer</a>
 </div>
 
@@ -25,41 +24,16 @@
             </th>
         </thead>
         <tbody >
-            <tr>
-                <td> {{allAnswers[0].block}} </td>
-                <td> {{allAnswers[1].block}} </td>
-                <td> id="3" </td>
-                <td> id="4" </td>
-                <td> id="5" </td>
-            </tr>
-            <tr>
-                <td> id="1" </td>
-                <td> id="2" </td>
-                <td> id="3" </td>
-                <td> id="4" </td>
-                <td> id="5" </td>
-            </tr>
-            <tr>
-                <td> id="1" </td>
-                <td> id="2" </td>
-                <td> FREESPACE </td>
-                <td> id="4" </td>
-                <td> id="5" </td>
-            </tr>
-            <tr>
-                <td> id="1" </td>
-                <td> id="2" </td>
-                <td> id="3" </td>
-                <td> id="4" </td>
-                <td> id="5" </td>
-            </tr>
-            <tr>
-                <td> id="1" </td>
-                <td> id="2" </td>
-                <td> id="3" </td>
-                <td> id="4" </td>
-                <td> id="5" </td>
-            </tr>
+            <!-- <tr *ngFor="let r of [0,1,2,3,4]" [id]="r">
+                <td *ngFor="let c of [r + 'c0', r + 'c1', r + 'c2', r + 'c3', r + 'c4']">  </td>
+            </tr> -->
+            <tr ></tr>
+                <td>  </td>
         </tbody>
     </table>
+</div>
+
+<div>
+    <button> BINGO </button>
+    
 </div>
