@@ -15,11 +15,11 @@ export class AuthBtnComponent implements OnInit {
   }
 
   logOut(){
-    this.auth.loginWithRedirect();
+    this.auth.logout();
   }
   loggedIn: boolean = false;
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe((isLoggedIn) =>{
+    this.auth.isAuthenticated$.subscribe((isLoggedIn: boolean) =>{
       this.loggedIn = isLoggedIn;
     })
   }

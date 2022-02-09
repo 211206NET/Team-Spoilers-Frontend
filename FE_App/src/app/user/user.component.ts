@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   constructor(private router: Router, private auth: AuthService) { }
   user: any = {}
   ngOnInit(): void {
-      this.auth.user$.subscribe((userInfo) => {
+      this.auth.user$.subscribe((userInfo: any) => {
         this.user = userInfo;
       })
   }
