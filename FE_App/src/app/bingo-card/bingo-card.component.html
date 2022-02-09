@@ -24,16 +24,25 @@
             </th>
         </thead>
         <tbody >
-            <!-- <tr *ngFor="let r of [0,1,2,3,4]" [id]="r">
-                <td *ngFor="let c of [r + 'c0', r + 'c1', r + 'c2', r + 'c3', r + 'c4']">  </td>
+            <!-- uncomment to try and get bingoCard with answers -->
+            <!-- <tr class="bg-white" *ngFor="let row of answers; let x = index">
+                <td *ngFor="let column of answers[x]; let y = index">
+                    <ng-container
+                        *ngIf="answers[x][y] === answers[2][2]; then free; else number">
+                    </ng-container>
+                    <ng-template #number>
+                        {{ answers[y][x] }}
+                    </ng-template>
+                    <ng-template #free>
+                        free Space!
+                    </ng-template>
+                </td>
             </tr> -->
-            <tr ></tr>
-                <td>  </td>
         </tbody>
     </table>
 </div>
 
 <div>
-    <button> BINGO </button>
+    <button class=""> BINGO </button>
     
 </div>

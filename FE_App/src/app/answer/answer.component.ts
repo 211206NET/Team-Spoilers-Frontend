@@ -34,6 +34,8 @@ export class AnswerComponent implements OnInit {
     bingoCardID: 0
   }
 
+
+
   displayFormSubmitError: boolean = false;
 
   answerForm(newAnswerFrom: NgForm)
@@ -57,7 +59,7 @@ export class AnswerComponent implements OnInit {
         this.apiService.createNewAnswer(this.answer).then((res) =>
         {
           console.log(res);
-        })
+        }, (err: any) => console.log(err))
       })
       console.log(this.bingo)
     })

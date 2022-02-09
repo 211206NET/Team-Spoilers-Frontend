@@ -32,6 +32,7 @@ bingo: BingoCard[] = [];
 
 answer: Answer[] = [];
 
+
   ngOnInit(): void {   
     this.apiService.getBingoCard().then((bingoArray) => 
     {
@@ -55,9 +56,8 @@ answer: Answer[] = [];
       })
       console.log(this.bingo)
     })
+    
 
-    function clear() {}
-    function isBingo() {}
     
     
   }
