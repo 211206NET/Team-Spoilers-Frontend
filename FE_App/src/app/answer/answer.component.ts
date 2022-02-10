@@ -71,10 +71,7 @@ export class AnswerComponent implements OnInit {
         })
         console.log(this.bingo)
         })
-        // this.apiService.createNewAnswer(this.answer).then((res) =>
-        // {
-        //   console.log(res);
-        // })
+        
     }
     else{
       alert('you didnt fill your answer correctly')

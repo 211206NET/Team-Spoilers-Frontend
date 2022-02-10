@@ -14,42 +14,42 @@ import { Game } from '../models/game';
 })
 export class GameComponent implements OnInit {
 
-  constructor(private apiService: BGApiService) { }
+  constructor( /*private apiService: BGApiService*/) { }
 
-  user: User = {
-    id: 0,
-    userName: '',
-    password: '',
-    BingoCard: []
-  }
-  game: Game = {
-    id:0,
-    question: '',
-    seriesID: 0,
-    playerID: 0,
-    hasWinner: false
-  }
-  bingoCard: BingoCard = {
-    id: 0,
-    userID: 0,
-    gameID: 0,
-    Answer: [],
-    seriesID: 0
+  // user: User = {
+  //   id: 0,
+  //   userName: '',
+  //   password: '',
+  //   BingoCard: []
+  // }
+  // game: Game = {
+  //   id:0,
+  //   question: '',
+  //   seriesID: 0,
+  //   playerID: 0,
+  //   hasWinner: false
+  // }
+  // bingoCard: BingoCard = {
+  //   id: 0,
+  //   userID: 0,
+  //   gameID: 0,
+  //   Answer: [],
+  //   seriesID: 0
   
-  }
-  
-  newCard() {
-    this.apiService.createNewBingoCard(this.bingoCard).then((res)=>
-      {
-        console.log(res);
-      })
+  // }
 
-  }
+  // newCard() {
+  //   this.apiService.createNewBingoCard(this.bingoCard).then((res)=>
+  //     {
+  //       console.log(res);
+  //     })
+
+  // }
   ngOnInit(): void {
-    this.apiService.createNewGame(this.game).then((res)=>
-    {
-      console.log(res);
-    })
+    // this.apiService.createNewGame(this.game).then((res)=>
+    // {
+    //   console.log(res);
+    // })
   }
 
 }
