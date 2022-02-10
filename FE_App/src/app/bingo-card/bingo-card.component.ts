@@ -1,43 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { BGApiService } from '../services/bgapi.service';
-import { Answer } from '../models/answer';
+import { Answer, Table } from '../models/answer';
 import { BingoCard } from '../models/bingo-card';
 import { AnswerComponent } from '../answer/answer.component';
 import { Game } from '../models/game';
 import { User } from '@auth0/auth0-angular';
-import { createMayBeForwardRefExpression } from '@angular/compiler';
 import { RouteConfigLoadEnd, Router } from '@angular/router';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+
+const emptyTable = [
+  [null, null, null, null, null],
+  [null, null, null, null, null],
+  [null, null, null, null, null],
+  [null, null, null, null, null],
+  [null, null, null, null, null],
+]
 
 @Component({
   selector: 'app-bingo-card',
   templateUrl: './bingo-card.component.html',
   styleUrls: ['./bingo-card.component.css']
 })
+
 export class BingoCardComponent implements OnInit {
 
   constructor(private apiService: BGApiService, private router: Router) { }
 
-id = 0;
-
-userlist: User[] = [];
-user: User = {
-  id: 0,
-  userName: '',
-  password: '',
-  BingoCard: []
-}
-
-bingo: BingoCard[] = [];
-
-answer: Answer[] = [];
+  id = 0;
+  userlist: User[] = [];
+  user: User = {
+    id: 0,
+    userName: '',
+    password: '',
+    BingoCard: []
+  }
+  bingo: BingoCard[] = [];
+  answer: Answer[] = [];
+  table: Table = [...emptyTable];
 
 
-  ngOnInit(): void {   
-    this.apiService.getBingoCard().then((bingoArray) => 
-    {
+  bingoWon() {
+    console.log('bingo Won!')
+  }
+
+  sqaureClicked() {
+    console.log('sqaure clicked')
+  }
+
+  ngOnInit(): void {
+    this.apiService.getBingoCard().then((bingoArray) => {
       this.bingo = bingoArray;
-      bingoArray.forEach(bingo =>{
+      bingoArray.forEach(bingo => {
         var currCard: BingoCard = {
           id: bingo.id,
           userID: bingo.userID,
@@ -46,9 +58,10 @@ answer: Answer[] = [];
           Answer: bingo.Answer
         }
         this.bingo.push(currCard)
-        
-        this.apiService.getAnswersbyBingoId(bingo.id).then((ansArray) =>{
+
+        this.apiService.getAnswersbyBingoId(bingo.id).then((ansArray) => {
           this.answer = ansArray;
+          this.getTableFromAnswer();
           this.answer.forEach((a) => {
             console.log(a.block)
           });
@@ -56,11 +69,14 @@ answer: Answer[] = [];
       })
       console.log(this.bingo)
     })
-    
-
-    
-    
   }
 
-    
+  getTableFromAnswer() { 
+    this.table = [...emptyTable]
+    for (let answer of this.answer) {
+      const row = (answer.id - 1) / 5;
+      const col = (answer.id - 1) % 5;
+      this.table[row][col] = answer
+    }
+  }
 }

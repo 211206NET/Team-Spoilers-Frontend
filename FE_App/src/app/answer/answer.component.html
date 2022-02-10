@@ -5,11 +5,12 @@
 
 <div class="container">
     <form (ngSubmit)="answerForm(newAnswerForm)" #newAnswerForm="ngForm">
-        <label for="ans-block">Answer</label>
-        <input type="text" id= "block" block="ans-block">
+        <div class="form-group">
+            <label for="ans-block">Answer</label>
+            <input name="answerBlock" class="form-control" [(ngModel)]="answer.block" type="text" id="block" block="ans-block" #block="ngModel" required>
+        </div>
+        <div>
+            <button class="btn btn-success"> Submit </button>
+        </div>
     </form>
-    <div>
-        <button> Submit </button>
-    </div>
 </div>
-

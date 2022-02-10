@@ -32,7 +32,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     SeriesComponent,
     UserComponent,
     PageNotFoundComponent, //added SPA Routing Code
-    AuthBtnComponent, NavbarComponent
+    NavbarComponent,
+    AuthBtnComponent,
+
   ],
   imports: [
     AuthModule.forRoot({
