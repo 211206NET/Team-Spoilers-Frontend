@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { USApiService } from '../services/usapi.service';
+import { User } from '@auth0/auth0-angular';
+import { BGApiService } from '../services/bgapi.service';
 import { AuthService } from '@auth0/auth0-angular';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,10 +12,12 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
   constructor(private router: Router, private auth: AuthService) { }
   user: any = {}
   ngOnInit(): void {
-      this.auth.user$.subscribe((userInfo) => {
+      this.auth.user$.subscribe((userInfo: any) => {
+        console.log(userInfo);
         this.user = userInfo;
       })
   }

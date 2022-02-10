@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { USApiService } from '../services/usapi.service';
 import { User } from '@auth0/auth0-angular';
 import { BGApiService } from '../services/bgapi.service';
 import { AuthService } from '@auth0/auth0-angular';
+
 
 @Component({
   selector: 'app-user',
@@ -10,14 +13,7 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private apiService: BGApiService, private auth: AuthService) { }
-
-  users: User[] = [];
-  isLoggedIn: boolean = false;
-
+  constructor() { }
   ngOnInit(): void {
-    
-
   }
-
 }

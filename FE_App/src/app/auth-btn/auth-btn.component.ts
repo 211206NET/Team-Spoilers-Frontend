@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -8,18 +8,18 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class AuthBtnComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(private auth: AuthService) { }
 
   logIn(){
     this.auth.loginWithRedirect();
   }
 
   logOut(){
-    this.auth.loginWithRedirect();
+    this.auth.logout();
   }
   loggedIn: boolean = false;
   ngOnInit(): void {
-    this.auth.isAuthenticated$.subscribe((isLoggedIn) =>{
+    this.auth.isAuthenticated$.subscribe((isLoggedIn: boolean) =>{
       this.loggedIn = isLoggedIn;
     })
   }

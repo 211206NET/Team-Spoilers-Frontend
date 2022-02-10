@@ -14,10 +14,11 @@ import { UserComponent } from './user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; //added SPA Routing Code
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
-import { NavbarComponent } from './navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { provideRoutes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     PageNotFoundComponent, //added SPA Routing Code
     NavbarComponent,
     AuthBtnComponent,
+
   ],
   imports: [
     AuthModule.forRoot({
