@@ -1,1 +1,13 @@
 <p>imdb works!</p>
+
+<!-- <app-imdb-search></app-imdb-search> -->
+
+<app-imdb-search (newSearchEvent)="addNewSearch($event)"></app-imdb-search>
+
+<div *ngFor="let item of allData">
+    <h3>
+        {{ item.l }}
+    </h3>
+    <!-- <p> {{item.q}} </p> -->
+    <img *ngIf="item.i.imageUrl" src={{item.i.imageUrl}} alt="Not available">
+</div>

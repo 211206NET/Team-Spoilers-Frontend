@@ -8,6 +8,7 @@ import { SeriesComponent } from './series/series.component';
 import { BingoCardComponent } from './bingo-card/bingo-card.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnswerComponent } from './answer/answer.component';
+import { ImdbComponent } from './imdb/imdb.component';
 
 const routes: Routes = [
   { path: 'game', component: GameComponent,
@@ -15,6 +16,12 @@ const routes: Routes = [
       {
         path: 'series', // child route path
         component: SeriesComponent, // child route component that the router renders
+          children: [
+            {
+              path: 'imdb',
+              component: ImdbComponent,
+            }
+          ],
       },
       {
         path: 'bingo-card',

@@ -18,6 +18,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+// NGX-Capture feature
+import { NgxCaptureModule } from 'ngx-capture';
+
+import { ImdbSearchComponent } from './imdb-search/imdb-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     UserComponent,
     PageNotFoundComponent, //added SPA Routing Code
     NavbarComponent,
-    AuthBtnComponent
+    AuthBtnComponent,
+    ImdbSearchComponent,
   ],
   imports: [
     AuthModule.forRoot({
@@ -42,7 +48,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxCaptureModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
