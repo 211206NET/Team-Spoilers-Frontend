@@ -26,7 +26,7 @@
         <tbody >
             <!-- uncomment to try and get bingoCard with answers -->
             <tr class="bg-white" *ngFor="let row of table; let x = index">
-                <td *ngFor="let column of row; let y = index">
+                <td *ngFor="let column of row; let y = index" (click)="sqaureClicked()">
                     <ng-container
                         *ngIf="x === 2 && y === 2; then free; else number">
                     </ng-container>

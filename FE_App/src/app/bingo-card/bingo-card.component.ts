@@ -33,13 +33,22 @@ export class BingoCardComponent implements OnInit {
     password: '',
     BingoCard: []
   }
+  game: Game = {
+    id: 0,
+    question: '',
+    seriesID: 0,
+    playerID: 0,
+    hasWinner: false
+  }
   bingo: BingoCard[] = [];
   answer: Answer[] = [];
+
   table: Table = [...emptyTable];
 
 
   bingoWon() {
     console.log('bingo Won!')
+    this.game.hasWinner == true;
   }
 
   sqaureClicked() {
@@ -47,6 +56,7 @@ export class BingoCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.game.hasWinner)
     this.apiService.getBingoCard().then((bingoArray) => {
       this.bingo = bingoArray;
       bingoArray.forEach(bingo => {
