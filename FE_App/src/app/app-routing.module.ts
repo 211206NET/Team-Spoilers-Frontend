@@ -16,7 +16,7 @@ const routes: Routes = [
          {
            path: 'series', // child route path
            component: SeriesComponent, // child route component that the router renders
-         },
+         children:[
          {
            path: 'bingo-card',
            component: BingoCardComponent, // another child route component that the router renders
@@ -25,6 +25,8 @@ const routes: Routes = [
            path: 'add-an-answer',
            component: AnswerComponent,
          }
+        ]
+      },
        ]
       },
       { path: 'leaderboard', 

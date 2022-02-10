@@ -5,6 +5,7 @@ import { BingoCard } from '../models/bingo-card';
 import { BGApiService } from '../services/bgapi.service';
 import { User } from '../models/user';
 
+
 @Component({
   selector: 'app-answer',
   templateUrl: './answer.component.html',
@@ -26,52 +27,56 @@ export class AnswerComponent implements OnInit {
   }
   
   bingo: BingoCard[] = [];
-  
-  answer: Answer = {
+// {
+//   id: 0,
+//   userID: this.user.id,
+//   gameID: 0,
+//   seriesID: 0,
+//   Answer: []
+// }
+  answer: Answer =
+  {
     id: 0,
     block: '',
     isMarked: false,
-    bingoCardID: 0
+    bingoCardID: 1
   }
 
+//displayFromSubmitError: boolean = false;
 
-
-  displayFormSubmitError: boolean = false;
 
   answerForm(newAnswerFrom: NgForm)
   {
-    console.log('form went through', newAnswerFrom)
-    if(newAnswerFrom.form.status == 'VALID')
+    console.log('form went through', newAnswerFrom, this.answer)
+    if(newAnswerFrom.form.status === 'VALID')
     {
       this.apiService.getBingoCard().then((bingoArray) => 
-    {
-      this.bingo = bingoArray;
-      bingoArray.forEach(bingo =>{
-        var currCard: BingoCard = {
-          id: bingo.id,
-          userID: bingo.userID,
-          seriesID: bingo.seriesID,
-          gameID: bingo.gameID,
-          Answer: bingo.Answer
-        }
-        this.bingo.push(currCard)
+      {
+        this.bingo = bingoArray;
+        bingoArray.forEach(bingo =>{
+          var currCard: BingoCard = {
+            id: bingo.id,
+            userID: bingo.userID,
+            seriesID: bingo.seriesID,
+            gameID: bingo.gameID,
+            Answer: bingo.Answer
+          }
+          this.bingo.push(currCard)
+          //console.log(this.answer.bingoCardID)
+          this.apiService.createNewAnswer(this.answer).then((res) =>
+          {
+            
+            console.log(res);
+          })
+        })
+        console.log(this.bingo)
+        })
         
-        this.apiService.createNewAnswer(this.answer).then((res) =>
-        {
-          console.log(res);
-        }, (err: any) => console.log(err))
-      })
-      console.log(this.bingo)
-    })
-      // this.bgAPI.createNewAnswer(this.answer).then((res) =>
-      // {
-      //   console.log(res);
-      // })
     }
-    else
-    {
-      this.displayFormSubmitError = true;
+    else{
+      alert('you didnt fill your answer correctly')
     }
+    
   }
 
   ngOnInit(): void {
