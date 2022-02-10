@@ -9,3 +9,6 @@ nav{
 .user-greeting{
     padding: 7px 0;
 }
+li {
+    display: inline;
+}
