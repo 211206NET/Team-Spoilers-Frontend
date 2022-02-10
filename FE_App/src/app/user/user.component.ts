@@ -16,12 +16,7 @@ export class UserComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   ngOnInit(): void {
-    this.apiService.getUser().then(result =>{
-      this.users = result;
-    });
-    this.auth.isAuthenticated$.subscribe((isAuthenticated) =>{
-      this.isLoggedIn = isAuthenticated;
-    })
+    
 
   }
 

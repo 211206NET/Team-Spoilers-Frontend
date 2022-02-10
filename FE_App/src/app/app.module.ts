@@ -32,7 +32,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     UserComponent,
     PageNotFoundComponent, //added SPA Routing Code
     NavbarComponent,
-    AuthBtnComponent
+    AuthBtnComponent,
   ],
   imports: [
     AuthModule.forRoot({
