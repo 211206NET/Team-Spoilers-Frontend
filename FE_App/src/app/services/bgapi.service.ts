@@ -7,6 +7,7 @@ import { BingoCard } from '../models/bingo-card';
 import { User } from '@auth0/auth0-angular';
 import { Series } from '../models/series';
 import { Player } from '../models/player'
+import { Game } from '../models/game';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class BGApiService {
 
     createNewAnswer(ans: Answer)
     {
-      return firstValueFrom(this.http.post(this.rootURL + "/Answer", ans))
+      return firstValueFrom(this.http.post( this.rootURL + "/Answer/1", ans))
     }
     getBingoCardbyId(id: number): Promise<BingoCard[]>
     { 
@@ -48,15 +49,7 @@ export class BGApiService {
     {
       return firstValueFrom(this.http.post(this.rootURL + "/BingoCard", bin))
     }
-    getUser(): Promise<User[]>
-    { 
-      return firstValueFrom(this.http.get<User[]>(this.rootURL + "/User"))
-    }
-
-    createNewUser(use: User)
-    {
-      return firstValueFrom(this.http.post(this.rootURL + "/User", use))
-    }
+    
     getSeries(): Promise<Series[]>
     { 
       return firstValueFrom(this.http.get<Series[]>(this.rootURL + "/Series"))
@@ -74,6 +67,16 @@ export class BGApiService {
     createNewPlayer(ans: Player)
     {
       return firstValueFrom(this.http.post(this.rootURL + "/Player", ans))
+    }
+
+    getCurrentGame(id: number): Promise<Game[]>
+    { 
+      return firstValueFrom(this.http.get<Game[]>(this.rootURL + "/Game/" + id))
+    }
+
+    createNewGame(ans: Game)
+    {
+      return firstValueFrom(this.http.post(this.rootURL + "/Game", ans))
     }
 
   }

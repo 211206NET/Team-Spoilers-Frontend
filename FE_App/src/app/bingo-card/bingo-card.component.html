@@ -25,24 +25,24 @@
         </thead>
         <tbody >
             <!-- uncomment to try and get bingoCard with answers -->
-            <!-- <tr class="bg-white" *ngFor="let row of answers; let x = index">
-                <td *ngFor="let column of answers[x]; let y = index">
+            <tr class="bg-white" *ngFor="let row of table; let x = index">
+                <td *ngFor="let column of row; let y = index">
                     <ng-container
-                        *ngIf="answers[x][y] === answers[2][2]; then free; else number">
+                        *ngIf="x === 2 && y === 2; then free; else number">
                     </ng-container>
                     <ng-template #number>
-                        {{ answers[y][x] }}
+                        {{ column }}
                     </ng-template>
                     <ng-template #free>
                         free Space!
                     </ng-template>
                 </td>
-            </tr> -->
+            </tr>
         </tbody>
     </table>
 </div>
 
 <div>
-    <button class=""> BINGO </button>
+    <button (click)="bingoWon()" class=""> BINGO </button>
     
 </div>
