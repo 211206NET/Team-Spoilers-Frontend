@@ -13,12 +13,7 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private router: Router, private auth: AuthService) { }
-  user: any = {}
+  constructor() { }
   ngOnInit(): void {
-      this.auth.user$.subscribe((userInfo: any) => {
-        console.log(userInfo);
-        this.user = userInfo;
-      })
   }
 }
