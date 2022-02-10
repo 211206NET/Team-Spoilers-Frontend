@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { provideRoutes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { provideRoutes } from '@angular/router';
     SeriesComponent,
     UserComponent,
     PageNotFoundComponent, //added SPA Routing Code
-    AuthBtnComponent
+    AuthBtnComponent, NavbarComponent
   ],
   imports: [
     AuthModule.forRoot({
