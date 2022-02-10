@@ -4,9 +4,9 @@ import { BGApiService } from '../services/bgapi.service';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-player',
+  templateUrl: './player.component.html',
+  styleUrls: ['./player.component.css']
 })
 export class PlayerComponent implements OnInit {
 
