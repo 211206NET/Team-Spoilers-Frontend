@@ -13,21 +13,24 @@ export class SeriesComponent implements OnInit {
   constructor(private apiService: BGApiService) { }
   
   
-  
-  bingoCard: BingoCard = {
+  createdBingoCard: BingoCard = {
     id: 0,
-    userID: 0,
-    gameID: 0,
+    userID: 1,
+    gameID: 2,
     Answer: [],
-    seriesID: 0
+    seriesID: 1
   
   }
+ 
 
   newCard() {
-    // this.apiService.createNewBingoCard(this.bingoCard).then((res)=>
-      // {
-      //   console.log(res);
-      // })
+    this.apiService.createNewBingoCard(this.createdBingoCard).then((res)=>
+      {
+        //this.createdBingoCard = res;
+        
+        console.log(res);
+        console.log(this.createdBingoCard.id)
+      })
 
   }
 

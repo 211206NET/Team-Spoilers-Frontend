@@ -65,7 +65,6 @@ export class AnswerComponent implements OnInit {
           //console.log(this.answer.bingoCardID)
           this.apiService.createNewAnswer(this.answer).then((res) =>
           {
-            
             console.log(res);
           })
         })
