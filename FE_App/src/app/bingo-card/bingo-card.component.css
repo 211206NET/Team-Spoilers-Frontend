@@ -1,17 +1,22 @@
 
 table{
-    width: 100%
+    width: 90%
 }
 
 td {
     word-break: break-all;
     text-align: center;
-    padding: 20px 10px;
+    padding: 30px;
     border: 1px solid;
     cursor: pointer;
+    
 }
 td:hover {
     background-color: lightcoral;
     }
+
+table{
+
+}
 
 

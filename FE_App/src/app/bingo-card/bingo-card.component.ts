@@ -25,8 +25,8 @@ export class BingoCardComponent implements OnInit {
 
   constructor(private apiService: BGApiService, private router: Router) { }
 
-  id = 0;
-  userlist: User[] = [];
+  id = 1;
+  //userlist: User[] = [];
   user: User = {
     id: 0,
     userName: '',
@@ -35,11 +35,12 @@ export class BingoCardComponent implements OnInit {
   }
   game: Game = {
     id: 0,
-    question: '',
+    question: 'What is going to Happen in the Show or Movie',
     seriesID: 0,
     playerID: 0,
     hasWinner: false
   }
+  
   bingo: BingoCard[] = [];
   answer: Answer[] = [];
 
@@ -53,6 +54,7 @@ export class BingoCardComponent implements OnInit {
 
   sqaureClicked() {
     console.log('sqaure clicked')
+    
   }
 
   ngOnInit(): void {

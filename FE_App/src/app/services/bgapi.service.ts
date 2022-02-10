@@ -31,6 +31,10 @@ export class BGApiService {
     {
       return firstValueFrom(this.http.post( this.rootURL + "/Answer/1", ans))
     }
+    updateAnswer(id: number, ans: Answer)
+    {
+      return firstValueFrom(this.http.put( this.rootURL+ "Answer/" +id, ans))
+    }
     getBingoCardbyId(id: number): Promise<BingoCard[]>
     { 
       return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard/" + id))
@@ -54,19 +58,23 @@ export class BGApiService {
     { 
       return firstValueFrom(this.http.get<Series[]>(this.rootURL + "/Series"))
     }
-
-    createNewSeries(ans: Answer)
+    getSeriesbyId(seriesID: number): Promise<Series[]>
     {
-      return firstValueFrom(this.http.post(this.rootURL + "/Series", ans))
+      return firstValueFrom(this.http.get<Series[]>(this.rootURL + "/Series/" + seriesID))
+    }
+
+    createNewSeries(series: Series)
+    {
+      return firstValueFrom(this.http.post(this.rootURL + "/Series", series))
     }
     getPlayer(): Promise<Player[]>
     { 
       return firstValueFrom(this.http.get<Player[]>(this.rootURL + "/Player"))
     }
 
-    createNewPlayer(ans: Player)
+    createNewPlayer(play: Player)
     {
-      return firstValueFrom(this.http.post(this.rootURL + "/Player", ans))
+      return firstValueFrom(this.http.post(this.rootURL + "/Player", play))
     }
 
     getCurrentGame(id: number): Promise<Game[]>
@@ -74,9 +82,13 @@ export class BGApiService {
       return firstValueFrom(this.http.get<Game[]>(this.rootURL + "/Game/" + id))
     }
 
-    createNewGame(ans: Game)
+    createNewGame(game: Game)
     {
-      return firstValueFrom(this.http.post(this.rootURL + "/Game", ans))
+      return firstValueFrom(this.http.post(this.rootURL + "/Game", game))
+    }
+    updateGame(id: number, game: Game)
+    {
+      return firstValueFrom(this.http.put( this.rootURL+ "Game/" +id, game))
     }
 
   }

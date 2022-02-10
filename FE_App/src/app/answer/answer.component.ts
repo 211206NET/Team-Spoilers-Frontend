@@ -20,7 +20,7 @@ export class AnswerComponent implements OnInit {
 //userlist: User[] = [];
 
   user: User = {
-    id: 0,
+    id: 1,
     userName: '',
     password: '',
     BingoCard: []
@@ -43,7 +43,7 @@ export class AnswerComponent implements OnInit {
   }
 
 //displayFromSubmitError: boolean = false;
-
+  
 
   answerForm(newAnswerFrom: NgForm)
   {
