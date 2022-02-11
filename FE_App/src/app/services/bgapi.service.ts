@@ -20,24 +20,24 @@ export class BGApiService {
 
     getAnswers(): Promise<Answer[]>
     { 
-      return firstValueFrom(this.http.get<Answer[]>(this.rootURL + "/Answer"))
+      return firstValueFrom(this.http.get<Answer[]>(this.rootURL + "Answer"))
     }
     getAnswersbyBingoId(id: number): Promise<Answer[]>
     { 
-      return firstValueFrom(this.http.get<Answer[]>(this.rootURL + "/Answer/" + id))
+      return firstValueFrom(this.http.get<Answer[]>(this.rootURL + "Answer/" + id))
     }
 
-    createNewAnswer(ans: Answer)
+    createNewAnswer(id: number, ans: Answer)
     {
-      return firstValueFrom(this.http.post( this.rootURL + "/Answer/1", ans))
+      return firstValueFrom(this.http.post( this.rootURL + "Answer/" +id, ans))
     }
     updateAnswer(id: number, ans: Answer)
     {
       return firstValueFrom(this.http.put( this.rootURL+ "Answer/" +id, ans))
     }
-    getBingoCardbyId(id: number): Promise<BingoCard[]>
+    getBingoCardbyId(id: number): Promise<BingoCard>
     { 
-      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard/" + id))
+      return firstValueFrom(this.http.get<BingoCard>(this.rootURL + "BingoCard/" + id))
     }
     getBingoCardbyUserId(id: number): Promise<BingoCard[]>
     {
@@ -46,17 +46,17 @@ export class BGApiService {
 
     getBingoCard(): Promise<BingoCard[]>
     {
-      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard"))
+      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "BingoCard"))
     }
 
     createNewBingoCard(bin: BingoCard)
     {
-      return firstValueFrom(this.http.post(this.rootURL + "/BingoCard", bin))
+      return firstValueFrom(this.http.post(this.rootURL + "BingoCard", bin))
     }
     
     getSeries(): Promise<Series[]>
     { 
-      return firstValueFrom(this.http.get<Series[]>(this.rootURL + "/Series"))
+      return firstValueFrom(this.http.get<Series[]>(this.rootURL + "Series"))
     }
     getSeriesbyId(seriesID: number): Promise<Series[]>
     {

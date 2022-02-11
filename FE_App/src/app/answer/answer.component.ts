@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Answer } from '../models/answer';
 import { BingoCard } from '../models/bingo-card';
@@ -12,10 +12,12 @@ import { User } from '../models/user';
   styleUrls: ['./answer.component.css']
 })
 export class AnswerComponent implements OnInit {
+  @Input("cardID") cardID = 0;
 
   constructor(private apiService: BGApiService) { }
 
-  id = 0;
+  //@Input() bingoAnswer = '';
+  
 
 //userlist: User[] = [];
 
@@ -26,20 +28,20 @@ export class AnswerComponent implements OnInit {
     BingoCard: []
   }
   
-  bingo: BingoCard[] = [];
-// {
-//   id: 0,
-//   userID: this.user.id,
-//   gameID: 0,
-//   seriesID: 0,
-//   Answer: []
-// }
+  bingo: BingoCard =
+{
+  id: 49,
+  userID: this.user.id,
+  gameID: 2,
+  seriesID: 1,
+  Answer: []
+}
   answer: Answer =
   {
     id: 0,
     block: '',
     isMarked: false,
-    bingoCardID: 1
+    bingoCardID: 49
   }
 
 //displayFromSubmitError: boolean = false;
@@ -47,38 +49,28 @@ export class AnswerComponent implements OnInit {
 
   answerForm(newAnswerFrom: NgForm)
   {
+    console.log(50);
     console.log('form went through', newAnswerFrom, this.answer)
     if(newAnswerFrom.form.status === 'VALID')
     {
-      this.apiService.getBingoCard().then((bingoArray) => 
+      this.apiService.getBingoCardbyId(49).then((cardy) => 
       {
-        this.bingo = bingoArray;
-        bingoArray.forEach(bingo =>{
-          var currCard: BingoCard = {
-            id: bingo.id,
-            userID: bingo.userID,
-            seriesID: bingo.seriesID,
-            gameID: bingo.gameID,
-            Answer: bingo.Answer
-          }
-          this.bingo.push(currCard)
+        this.bingo = cardy;
+        
           //console.log(this.answer.bingoCardID)
-          this.apiService.createNewAnswer(this.answer).then((res) =>
+          this.apiService.createNewAnswer(this.bingo.id, this.answer).then((res) =>
           {
             console.log(res);
           })
         })
         console.log(this.bingo)
-        })
+        }
         
     }
-    else{
-      alert('you didnt fill your answer correctly')
-    }
     
+    ngOnInit(): void {
+    
+    }
   }
 
-  ngOnInit(): void {
-  }
 
-}

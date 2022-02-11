@@ -11,9 +11,9 @@ export class USApiService{
     constructor(private http: HttpClient) {}
     rootURL = environment.bgApiRootUrl;
     getUsers() : Promise<User[]>{
-        return firstValueFrom(this.http.get<User[]>(this.rootURL + "/User"))
+        return firstValueFrom(this.http.get<User[]>(this.rootURL + "User"))
     }
     createNewUser(us: User){
-        return firstValueFrom(this.http.post(this.rootURL + "/User", us))
+        return firstValueFrom(this.http.post(this.rootURL + "User", us))
     }
 }

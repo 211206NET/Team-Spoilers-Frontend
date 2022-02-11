@@ -24,13 +24,13 @@ export class SeriesComponent implements OnInit {
  
 
   newCard() {
-    this.apiService.createNewBingoCard(this.createdBingoCard).then((res)=>
-      {
-        //this.createdBingoCard = res;
+    // this.apiService.createNewBingoCard(this.createdBingoCard).then((res)=>
+    //   {
+    //     //this.createdBingoCard = res;
         
-        console.log(res);
-        console.log(this.createdBingoCard.id)
-      })
+    //     console.log(res);
+    //     console.log(this.createdBingoCard.id)
+    //   })
 
   }
 
@@ -43,6 +43,7 @@ export class SeriesComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    console.log('youre being called')
     // this.apiService.createNewSeries(this.pickedSeries)
     // console.log(this.pickedSeries.seriesID)
   }

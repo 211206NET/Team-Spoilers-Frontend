@@ -4,6 +4,8 @@
     <a class="nav-link" routerLink="add-an-answer">Add an answer</a>
 </div>
 
+<app-answer></app-answer>
+
 <div class="container">
     <table id="bingo-card" class="table">
         <thead>
@@ -34,7 +36,7 @@
                         {{ column }}
                     </ng-template>
                     <ng-template #free>
-                        free Space!
+                        Free Space!
                     </ng-template>
                 </td>
             </tr>
@@ -43,6 +45,6 @@
 </div>
 
 <div>
-    <button (click)="bingoWon()" class=""> BINGO </button>
+    <button (click)="bingoWon()" class="bingobtn" > BINGO </button>
     
 </div>
