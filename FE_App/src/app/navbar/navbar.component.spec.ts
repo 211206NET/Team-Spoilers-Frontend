@@ -9,7 +9,7 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarComponent],
+      declarations: [ NavbarComponent ],
       imports: [
         RouterTestingModule,
         AuthModule.forRoot({
@@ -20,11 +20,13 @@ describe('NavbarComponent', () => {
     })
     .compileComponents();
   });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

@@ -14,15 +14,18 @@ import { UserComponent } from './user/user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'; //added SPA Routing Code
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
-import { NavbarComponent } from './navbar/navbar.component';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 // NGX-Capture feature
 import { NgxCaptureModule } from 'ngx-capture';
 
 import { ImdbSearchComponent } from './imdb-search/imdb-search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageNotFoundComponent, //added SPA Routing Code
     NavbarComponent,
     AuthBtnComponent,
+
     ImdbSearchComponent,
+
   ],
   imports: [
     AuthModule.forRoot({

@@ -11,31 +11,32 @@ import { AnswerComponent } from './answer/answer.component';
 import { ImdbComponent } from './imdb/imdb.component';
 
 const routes: Routes = [
-  { path: 'game', component: GameComponent,
-    children: [
-      {
-        path: 'series', // child route path
-        component: SeriesComponent, // child route component that the router renders
-          children: [
-            {
-              path: 'imdb',
-              component: ImdbComponent,
-            }
-          ],
+  {    path: 'game', 
+       component: GameComponent,
+       children:[
+         {
+           path: 'series', // child route path
+           component: SeriesComponent, // child route component that the router renders
+           path: 'imdb',
+           component: ImdbComponent,
+         children:[
+         {
+           path: 'bingo-card',
+           component: BingoCardComponent, // another child route component that the router renders
+           children:[
+         {
+           path: 'add-an-answer',
+           component: AnswerComponent,
+         }
+        ]
+        },
+        ]
       },
-      {
-        path: 'bingo-card',
-        component: BingoCardComponent, // another child route component that the router renders
+       ]
       },
-      {
-        path: 'add-an-answer',
-        component: AnswerComponent,
-      }
-    ],
-  },
-  { path: 'leaderboard', component: LeaderboardComponent },
-  { path: 'user', component: UserComponent },
-  { path: 'series', component: SeriesComponent },
+      { path: 'leaderboard', 
+        component: LeaderboardComponent, 
+      },
   { path: '',   redirectTo: '/user', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

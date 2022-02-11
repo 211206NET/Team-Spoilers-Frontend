@@ -4,3 +4,5 @@ export type Answer = {
     block: string;
     isMarked: boolean;
 }
+
+export type Table = Array<Array<Answer|null>>;

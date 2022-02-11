@@ -1,12 +1,14 @@
 import { TestBed } from '@angular/core/testing';
-
+//import { HttpClientTestingModel, HttpTestingController} from '@angular/core/testing'
 import { BGApiService } from './bgapi.service';
 
 describe('BGApiService', () => {
   let service: BGApiService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      
+    });
     service = TestBed.inject(BGApiService);
   });
 
