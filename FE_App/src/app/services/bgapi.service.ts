@@ -31,9 +31,9 @@ export class BGApiService {
     {
       return firstValueFrom(this.http.post( this.rootURL + "/Answer/1", ans))
     }
-    getBingoCardbyId(id: number): Promise<BingoCard[]>
+    getBingoCardbyId(id: number): Promise<BingoCard>
     { 
-      return firstValueFrom(this.http.get<BingoCard[]>(this.rootURL + "/BingoCard/" + id))
+      return firstValueFrom(this.http.get<BingoCard>(this.rootURL + "/BingoCard/" + id))
     }
     getBingoCardbyUserId(id: number): Promise<BingoCard[]>
     {

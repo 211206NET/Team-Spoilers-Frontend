@@ -28,13 +28,112 @@
             <tr class="bg-white" *ngFor="let row of table; let x = index">
                 <td *ngFor="let column of row; let y = index">
                     <ng-container
-                        *ngIf="x === 2 && y === 2; then free; else number">
+                        *ngIf="x === 2 && y === 2; then free">
                     </ng-container>
+                    <ng-container
+                        *ngIf="x === 1 && y === 1 then dalek">
+                    </ng-container>
+                    <ng-container
+                    *ngIf="x === 1 && y === 2 then cybermen"></ng-container>
+                    <ng-container *ngIf="x === 1 && y === 3 then themaster"></ng-container>
+                    <ng-container *ngIf="x === 1 && y === 0 then sontarans"></ng-container>
+                    <ng-container *ngIf="x === 1 && y === 4 then silurians"></ng-container>
+                    <ng-container *ngIf="x === 0 && y === 0 then bigger"></ng-container>
+                    <ng-container *ngIf="x === 0 && y === 1 then brakes"></ng-container>
+                    <ng-container *ngIf="x === 0 && y === 2 then niche"></ng-container>
+                    <ng-container *ngIf="x === 0 && y === 3 then unit"></ng-container>
+                    <ng-container *ngIf="x === 4 && y === 4 then age"></ng-container>
+                    <ng-template *ngIf="x === 2 && y === 0 then exposit"></ng-template>
+                    <ng-template *ngIf="x === 2 && y === 1 then kidnap"></ng-template>
+                    <ng-template *ngIf="x === 2 && y === 3 then doctorpast"></ng-template>
+                    <ng-template *ngIf="x === 2 && y === 4 then doctorromance"></ng-template>
+                    <ng-template *ngIf="x === 3 && y === 0 then farewell"></ng-template>
+                    <ng-template *ngIf="x === 3 && y === 1 then villaindies"></ng-template>
+                    <ng-template *ngIf="x === 3 && y === 2 then moral"></ng-template>
+                    <ng-template *ngIf="x === 3 && y === 3 then speech"></ng-template>
+                    <ng-template *ngIf="x === 3 && y === 4 then newref"></ng-template>
+                    <ng-template *ngIf="x === 0 && y === 4 then guilt"></ng-template>
+                    <ng-template *ngIf="x === 4 && y === 0 then trysave"></ng-template>
+                    <ng-template *ngIf="x === 4 && y === 1 then murder"></ng-template>
+                    <ng-template *ngIf="x === 4 && y === 2 then oopsies"></ng-template>
+                    <ng-template *ngIf="x === 4 && y === 3 then titlestyle"></ng-template>
                     <ng-template #number>
-                        {{ column }}
+                        test
                     </ng-template>
                     <ng-template #free>
                         free Space!
+                    </ng-template>
+                    <ng-template #dalek>
+                        The daleks show up
+                    </ng-template>
+                    <ng-template #cybermen>
+                        The cybermen show up
+                    </ng-template>
+                    <ng-template #themaster>
+                        The Master shows up
+                    </ng-template>
+                    <ng-template #sontarans>
+                        The Sontarans show up
+                    </ng-template>
+                    <ng-template #silurians>
+                        The silurians show up
+                    </ng-template>
+                    <ng-template #bigger>
+                        'It's bigger on the inside!'
+                    </ng-template>
+                    <ng-template #brakes>
+                        The TARDIS breaks down
+                    </ng-template>
+                    <ng-template #niche>
+                        Niche classic Who reference
+                    </ng-template>
+                    <ng-template #unit>
+                        UNIT appears
+                    </ng-template>
+                    <ng-template #age>
+                        The Doctor mentions their age
+                    </ng-template>
+                    <ng-template #exposit>
+                        The companion asks an expository question
+                    </ng-template>
+                    <ng-template #kidnap>
+                        The companion gets kidnapped
+                    </ng-template>
+                    <ng-template #doctorpast>
+                        The Doctor mentions a random element from their youth
+                    </ng-template>
+                    <ng-template #doctorromance>
+                        There is a romantic moment involving the Doctor and a companion
+                    </ng-template>
+                    <ng-template #farewell>
+                        A companion leaves the Doctor
+                    </ng-template>
+                    <ng-template #villaindies>
+                        The main villain of the episode dies
+                    </ng-template>
+                    <ng-template #moral>
+                        The Doctor teaches other characters a moral lesson
+                    </ng-template>
+                    <ng-template #speech>
+                        The Doctor gives a big speech
+                    </ng-template>
+                    <ng-template #newref>
+                        Reference to a new series episode
+                    </ng-template>
+                    <ng-template #guilt>
+                        The Doctor experiences guilt over a past event
+                    </ng-template>
+                    <ng-template #trysave>
+                        The Doctor tries to save the villain
+                    </ng-template>
+                    <ng-template #murder>
+                        The Doctor kills someone
+                    </ng-template>
+                    <ng-template #oopsies>
+                        There is a continuity mistake
+                    </ng-template>
+                    <ng-template #titlestyle>
+                        The title of the episode is 'The [blank] of [blank]'
                     </ng-template>
                 </td>
             </tr>

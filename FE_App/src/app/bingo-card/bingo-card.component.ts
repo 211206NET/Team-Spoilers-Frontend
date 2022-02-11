@@ -39,7 +39,8 @@ export class BingoCardComponent implements OnInit {
 
 
   bingoWon() {
-    console.log('bingo Won!')
+    console.log('bingo Won!');
+    alert('Congratulations, you won!');
   }
 
   sqaureClicked() {
