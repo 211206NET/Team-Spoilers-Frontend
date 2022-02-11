@@ -17,7 +17,15 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { environment } from 'src/environments/environment';
 import { AuthBtnComponent } from './auth-btn/auth-btn.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+// NGX-Capture feature
+import { NgxCaptureModule } from 'ngx-capture';
+
+import { ImdbSearchComponent } from './imdb-search/imdb-search.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { NavbarComponent } from './navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +42,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent,
     AuthBtnComponent,
 
+    ImdbSearchComponent,
+
   ],
   imports: [
     AuthModule.forRoot({
@@ -44,6 +54,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxCaptureModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
